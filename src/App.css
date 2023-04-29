@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+  text-decoration: none !important;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.scrollBody{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollBody::-webkit-scrollbar{
+  display: none;
+}
+
+.no-outline:focus {
+  outline: none;
+}
+@media screen and (min-width: 768px) {
+  .adjustImg {
+    width: 400px !important;
+    height: 600px !important;
+  }
+}
