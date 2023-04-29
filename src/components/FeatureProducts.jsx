@@ -11,11 +11,8 @@ export default function FeatureProducts({ error, data, loading }) {
   const scrollRef = useRef();
   const { increaseBagQuantity } = useStateContext();
 
-  const scroll = (direction) => {
-    const { current } = scrollRef;
-    direction === 'left'
-      ? (current.scrollleft -= 500)
-      : (current.scrollleft += 500);
+  const scroll = (scrollOffset) => {
+    scrollRef.current.scrollLeft += scrollOffset;
   };
   const featureProducts = data.filter(
     (product) => product.price >= 700 && product.price <= 5000
@@ -68,13 +65,13 @@ export default function FeatureProducts({ error, data, loading }) {
                   <AiOutlineArrowLeft
                      size="2rem"
                      style={{ cursor: "pointer" }}
-                     onClick={() => scroll('left')}
+                     onClick={() => scroll(-500)}
                    />
 
                   <AiOutlineArrowRight
                      size="2rem"
                      style={{ cursor: "pointer" }}
-                     onClick={() => scroll('right')}
+                     onClick={() => scroll(500)}
                   />
                 </div>
               </div>

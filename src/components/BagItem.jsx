@@ -13,7 +13,7 @@ export default function BagItem({id, data}) {
   } = useStateContext();
 
   const item = data?.find((product) => product.id === id);
-  // console.log(data)
+
 
   if (item == null) return null;
   const quantityCount = getItemQuantity(item?.id);
